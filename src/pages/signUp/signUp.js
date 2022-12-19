@@ -6,6 +6,8 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import axios from "axios";
 import { BASE_URL } from "../../constants/url";
+import { useNavigate } from "react-router-dom";
+import { goToSignUpAdress } from "../../routes/coordinator";
 
 
 const SignUp = () => {
@@ -21,6 +23,7 @@ const SignUp = () => {
   const [showCheckPassword, setShowCheckPassword] = useState(false)
   const [checKErrorPassword, setCheckErrorPassword] = useState(false);
 
+  const navigate = useNavigate()
 
   const cpfFormat = (value) => {
     return value
@@ -51,11 +54,13 @@ const SignUp = () => {
 
   const createUser = async () => {
     await axios.post(`${BASE_URL}/signup`, form)
-    .then((response) => {
-      console.log(response.data)
+    .then((res) => {
+      localStorage.setItem("token", res.data.token)
+      alert(`Seja bem vindo ${res.data.user.name}`)
+      goToSignUpAdress(navigate)
     })
     .catch((error) => {
-      console.log(error.response)
+      alert(error.response)
     })
   }
   return (

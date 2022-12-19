@@ -19,7 +19,6 @@ margin-top: 50px;
     width: 80%;
     height: 60%;
     margin: 5px;
-    border: solid black 1px;
 `
 export const InputMaterial = styled(TextField)`
     width: 100%;

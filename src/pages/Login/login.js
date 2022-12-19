@@ -55,7 +55,7 @@ const Login = () => {
           setErrorEmail(error.response.data.message);
           setCheckErrorEmail(true);
         }
-        console.log(error.response.data.message);
+        alert(error.response.data.message);
       });
   };
   return (
