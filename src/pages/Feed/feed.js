@@ -1,8 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import CardRestaurante from "../../components/CardRestaurante/cardRestaurante";
+import Header from "../../components/Header/header.js";
 import { BASE_URL } from "../../constants/url";
-import { CardsRestaurants, ContainerFeed } from "./styled";
+import { CardsRestaurants, ContainerFeed, InputSearch } from "./styled";
 
 const Feed = () => {
   const [restaurants, setRestaurants] = useState([]);
@@ -29,7 +30,9 @@ const Feed = () => {
   };
   return (
       <ContainerFeed>
+        <Header title={"Rappi4"}/>
         <CardsRestaurants>
+        <InputSearch/>
           {
             restaurants.map((restaurant)=>{
               return <CardRestaurante key={restaurant.id} restaurant={restaurant}/>
