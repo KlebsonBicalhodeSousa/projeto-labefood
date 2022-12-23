@@ -10,3 +10,9 @@ export const goToSignUp = (navigate) => {
 export const goToSignUpAdress = (navigate) => {
     navigate("/signUp/adress")
 }
+export const goToAdressEdit = (navigate, id) => {
+    navigate(`/adressEdit/${id}`)
+}
+export const goToRestaurant = (navigate, id) => {
+    navigate(`/feed/${id}`)
+}

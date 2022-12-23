@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { primaryColor, secondaryColor } from "../../constants/colors";
 
 export const Main = styled.div`
   width: 360px;
@@ -12,7 +13,7 @@ export const ContainerCardRestaurant = styled.div`
   padding: 0 0 16px;
   margin-top: 10px;
   border-radius: 8px;
-  border: solid 1px #b8b8b8;
+  border: solid 1px ${secondaryColor};
 `;
 export const ImgRestaurant = styled.img`
   width: 100%;
@@ -27,7 +28,7 @@ export const NameRestaurant = styled.h3`
   margin: 8px 16px 4px;
   font-family: Roboto;
   font-size: 16px;
-  color: #e86e5a;
+  color: ${primaryColor};
 `;
 
 export const ContainerTimePrice = styled.div`
