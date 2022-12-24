@@ -29,9 +29,6 @@ export const Menu = styled.nav`
 `;
 
 export const MenuItem = styled.button`
-  /* width: 5.438rem;
-  height: 1.125rem;
-  margin: 0 8px 0 0; */
   font-family: Roboto;
   font-size: 1rem;
   font-weight: normal;

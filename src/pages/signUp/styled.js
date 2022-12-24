@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Button } from "@mui/material";
+import { Button, IconButton } from "@mui/material";
 import TextField from "@material-ui/core/TextField";
 
 export const InputMaterial = styled(TextField)`
@@ -8,22 +8,23 @@ export const InputMaterial = styled(TextField)`
 
 export const Main = styled.div`
     padding: 10px;
-    width: 100%;
+    min-width: 320px;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center; 
-   
 `
 
 export const Form = styled.form`
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 100%;
     height: 30%;
     justify-content: space-between;
     margin: 5px;
+    gap: 20px;
 ` 
+
 export const ButtonStyled = styled(Button)`
     &&{
         color: #000;
@@ -34,10 +35,18 @@ export const ButtonStyled = styled(Button)`
     }
 `
 
+export const VisibilityButton = styled(IconButton)`
+    && {
+        position: absolute;
+        right: 3%;
+    }
+`
+
 export const DivPassword = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
     p{
         font-size: 1rem;
     }   

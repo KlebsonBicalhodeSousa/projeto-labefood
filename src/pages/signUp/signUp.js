@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "../../hooks/useForm";
-import { ButtonStyled, DivPassword, Form, InputMaterial, Main } from "./styled";
-import IconButton from "@material-ui/core/IconButton";
+import { ButtonStyled, DivPassword, Form, InputMaterial, Main, VisibilityButton } from "./styled";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import axios from "axios";
@@ -115,13 +114,13 @@ const SignUp = () => {
             onChange={onChangeForm}  
             required
           />
-          <IconButton
+          <VisibilityButton
             aria-label="toggle password visibility"
             onClick={handleClickShowPassword}
             edge="end"
           >
             {showPassword ? <Visibility /> : <VisibilityOff />}
-          </IconButton>
+          </VisibilityButton>
         </DivPassword>
         <DivPassword>
           <InputMaterial
@@ -141,13 +140,13 @@ const SignUp = () => {
             // onChange={onChangeForm}
             required
           />
-          <IconButton
+          <VisibilityButton
             aria-label="toggle password visibility"
             onClick={handleClickShowCheckPassword}
             edge="end"
           >
             {showCheckPassword ? <Visibility /> : <VisibilityOff />}
-          </IconButton>
+          </VisibilityButton>
         </DivPassword>
         <ButtonStyled type="submit">Confirmar</ButtonStyled>
 

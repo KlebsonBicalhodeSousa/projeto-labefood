@@ -5,7 +5,8 @@ import Login from "../pages/Login/login"
 import Profile from "../pages/Profile/profile"
 import Restaurant from "../pages/Restaurant/restaurant"
 import SignUpAdress from "../pages/SignUpAdress/signUpAdress"
-import SignUp from "../pages/signUp/signUp"
+import SignUp from "../pages/SignUp/signUp"
+import AdressEdit from "../pages/AdressEdit/adressEdit"
 
 const Router = () => {
     return(
@@ -14,7 +15,7 @@ const Router = () => {
                 <Route index element={<Login/>}/>
                 <Route path="/signUp"element={<SignUp/>}/>
                 <Route path="/signUp/adress"element={<SignUpAdress/>}/>
-                {/* <Route path="/adressEdit/:id"element={<AdressEdit/>}/> */}
+                <Route path="/adressEdit/:id"element={<AdressEdit/>}/>
                 <Route path="/feed"element={<Feed/>}/>
                 <Route path="/feed/:restaurantId"element={<Restaurant/>}/>
                 <Route path="/profile" element={<Profile/>}/>

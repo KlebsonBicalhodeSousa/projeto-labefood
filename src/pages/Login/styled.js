@@ -1,41 +1,74 @@
 import styled from "styled-components";
 import { Button } from "@mui/material";
 import TextField from "@material-ui/core/TextField";
-
-export const InputMaterial = styled(TextField)`
-    width: 100%;
-`
+import IconButton from "@material-ui/core/IconButton";
 
 export const Main = styled.div`
-    padding: 10px;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    p{
-        font-size: 1rem;
-    }   
-`
+  padding: 10px;
+  min-width: 320px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  p {
+    font-size: 1rem;
+  }
+`;
 
 export const Form = styled.form`
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    height: 30%;
-    justify-content: space-evenly;
-` 
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 50%;
+  margin-top: 20px;
+  gap: 20px;
+`;
+export const InputMaterial = styled(TextField)`
+  && {
+    width: 100%;
+  }
+`;
+export const VisibilityButton = styled(IconButton)`
+  && {
+    position: absolute;
+    right: 2%;
+  }
+`;
+
 export const ButtonStyled = styled(Button)`
-    &&{
-        color: #000;
-        width: 100%;
-        height: 2.813rem;
-        background-color: #E8222E;
+  && {
+    color: #000;
+    width: 100%;
+    height: 2.813rem;
+    background-color: #e8222e;
+  }
+`;
+
+export const Redirect = styled.p`
+position: relative;
+  button {
+    border: none;
+    font-family: Roboto;
+    background: none;
+    font-size: 1rem;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.39px;
+    text-align: center;
+    text-decoration: underline;
+    color: blue;
+    margin-left: 5px;
+    :hover {
+        font-weight: 700;
     }
-`
+  }
+`;
 
 export const DivPassword = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+`;

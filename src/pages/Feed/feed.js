@@ -1,7 +1,7 @@
 import { SettingsPowerSharp } from "@mui/icons-material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import CardRestaurante from "../../components/CardRestaurante/cardRestaurante";
+import CardRestaurante from "../../components/CardRestaurant/cardRestaurante";
 import Header from "../../components/Header/header.js";
 import { BASE_URL } from "../../constants/url";
 import { useProtectedPage } from "../../hooks/useProtectedPage";

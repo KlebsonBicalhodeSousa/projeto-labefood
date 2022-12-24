@@ -1,16 +1,18 @@
+import { useNavigate } from "react-router-dom";
+import { goToRestaurant } from "../../routes/coordinator";
 import {
   ContainerCardRestaurant,
   ContainerTimePrice,
   ImgRestaurant,
   InformShipping,
   InformTime,
-  Main,
   NameRestaurant,
 } from "./styled";
 
 const CardRestaurante = ({ restaurant }) => {
+  const navigate = useNavigate()
   return (    
-    <ContainerCardRestaurant>
+    <ContainerCardRestaurant onClick={()=>goToRestaurant(navigate, restaurant.id)}>
       <ImgRestaurant src={restaurant.logoUrl} />
       <NameRestaurant>{restaurant.name}</NameRestaurant>
       <ContainerTimePrice>

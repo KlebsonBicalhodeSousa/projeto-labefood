@@ -1,12 +1,11 @@
-import IconButton from "@material-ui/core/IconButton";
 import React, { useState } from "react";
-import { ButtonStyled, DivPassword, Form, Main, InputMaterial } from "./styled";
+import { ButtonStyled, DivPassword, Form, Main, InputMaterial, VisibilityButton, Redirect } from "./styled";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import axios from "axios";
 import { BASE_URL } from "../../constants/url";
 import { useNavigate } from "react-router-dom";
-import { goToFeed } from "../../routes/coordinator";
+import { goToFeed, goToSignUp } from "../../routes/coordinator";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -91,16 +90,17 @@ const Login = () => {
             }}
             required
           />
-          <IconButton
+          <VisibilityButton
             aria-label="toggle password visibility"
             onClick={handleClickShowPassword}
             edge="end"
           >
             {showPassword ? <VisibilityOff /> : <Visibility />}
-          </IconButton>
+          </VisibilityButton>
         </DivPassword>
 
         <ButtonStyled type="submit">Entrar</ButtonStyled>
+      <Redirect>Não tem cadastro click <button onClick={()=>goToSignUp(navigate)}>Aqui</button></Redirect>
       </Form>
     </Main>
   );
