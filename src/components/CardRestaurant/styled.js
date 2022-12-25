@@ -14,6 +14,7 @@ export const ContainerCardRestaurant = styled.div`
   margin-top: 10px;
   border-radius: 8px;
   border: solid 1px ${secondaryColor};
+  cursor: pointer;
 `;
 export const ImgRestaurant = styled.img`
   width: 100%;
@@ -26,7 +27,7 @@ export const NameRestaurant = styled.h3`
   width: 296px;
   height: 18px;
   margin: 8px 16px 4px;
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   color: ${primaryColor};
 `;

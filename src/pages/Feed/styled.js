@@ -29,7 +29,7 @@ export const Menu = styled.nav`
 `;
 
 export const MenuItem = styled.button`
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   font-weight: normal;
   font-stretch: normal;

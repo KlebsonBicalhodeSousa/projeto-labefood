@@ -42,8 +42,8 @@ const Login = () => {
         setCheckErrorEmail(false)
         setCheckErrorPassword(false)
         localStorage.setItem("token", response.data.token)
-        alert(`Seja bem vindo ${response.data.user.name}!`)
         goToFeed(navigate)
+        alert(`Seja bem vindo ${response.data.user.name}!`)
 
       })
       .catch((error) => {

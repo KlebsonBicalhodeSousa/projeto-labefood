@@ -1,10 +1,14 @@
 import axios from "axios";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import CardRestauranteDetail from "../../components/CardRestaurantDetail/cardRestaurantDetail";
+import Header from "../../components/Header/header.js";
 import { BASE_URL } from "../../constants/url";
-import { ContainerRestaurant } from "./styled";
+import { CardRestaurant, ContainerRestaurant } from "./styled";
 
 const Restaurant = () => {
+  const [restaurantDetail, setRestaurantdetail] = useState({})
+  console.log(restaurantDetail)
 
   const {restaurantId} = useParams()
   const token = localStorage.getItem("token")
@@ -20,7 +24,7 @@ const Restaurant = () => {
       }
     })
     .then((res)=>{
-      console.log(res.data)
+      setRestaurantdetail(res.data.restaurant)
     })
     .catch((error)=>{
       console.log(error.response)
@@ -28,7 +32,11 @@ const Restaurant = () => {
   }
     return (
       <ContainerRestaurant>
-        Restaurant
+        <Header title="Restaurante"/>
+        <CardRestaurant>
+          <CardRestauranteDetail restaurantDetail={restaurantDetail}/>
+        </CardRestaurant>
+        
       </ContainerRestaurant>
     );
   }

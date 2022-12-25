@@ -9,7 +9,7 @@ import {
   NameRestaurant,
 } from "./styled";
 
-const CardRestaurante = ({ restaurant }) => {
+const CardRestaurant = ({ restaurant }) => {
   const navigate = useNavigate()
   return (    
     <ContainerCardRestaurant onClick={()=>goToRestaurant(navigate, restaurant.id)}>
@@ -22,4 +22,4 @@ const CardRestaurante = ({ restaurant }) => {
     </ContainerCardRestaurant>
   );
 };
-export default CardRestaurante;
+export default CardRestaurant;

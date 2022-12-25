@@ -1,7 +1,7 @@
 import { SettingsPowerSharp } from "@mui/icons-material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import CardRestaurante from "../../components/CardRestaurant/cardRestaurante";
+import CardRestaurant from "../../components/CardRestaurant/cardRestaurant";
 import Header from "../../components/Header/header.js";
 import { BASE_URL } from "../../constants/url";
 import { useProtectedPage } from "../../hooks/useProtectedPage";
@@ -20,7 +20,6 @@ const Feed = () => {
   const [categoryRestaurant, setCategoryRestaurant] = useState([]);
   const [inputText, setInputText] = useState("");
   const [selectCategory, setSelectCategory] = useState("");
-  // const [select, setSelect] = useState(false);
 
   useEffect(() => {
     getRestaurants();
@@ -93,7 +92,7 @@ const Feed = () => {
         : true
     )
     .map((restaurant) => {
-      return <CardRestaurante key={restaurant.id} restaurant={restaurant} />;
+      return <CardRestaurant key={restaurant.id} restaurant={restaurant} />;
     });
 
   const onClickCategory = (parameter)=>{

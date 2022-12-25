@@ -48,7 +48,7 @@ export const Redirect = styled.p`
 position: relative;
   button {
     border: none;
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
     background: none;
     font-size: 1rem;
     font-weight: 400;
