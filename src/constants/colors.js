@@ -1,4 +1,4 @@
 export const primaryColor = "#E8222E"
 export const secondaryColor = "#b8b8b8"
-// export const tertiaryColor = "#ffffff"
+export const tertiaryColor = "#000"
 // export const quaternaryColor = "#ffff0f"

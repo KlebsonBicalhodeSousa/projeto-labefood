@@ -6,27 +6,27 @@ export const ContainerCardRestaurant = styled.div`
   padding: 0 0 16px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  /* border: solid 1px ${secondaryColor}; */
-  margin: 9px 16px 12px;
+  margin: 9px 16px 8px;
 `;
+
 export const ImgRestaurant = styled.img`
-  width: 328px;
+  width: 100%;
   height: 120px;
   border-radius: 10px 10px 0 0;
 `;
 
 export const NameRestaurant = styled.h3`
-  width: 328px;
+  width: 100%;
   height: 18px;
-  margin: 12px 16px 8px;
+  margin: 12px 0 8px 0;
   font-family: 'Roboto', sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
   letter-spacing: -0.39px;
+  text-align: left;
   color: ${primaryColor};
 `;
 
@@ -37,7 +37,7 @@ export const Inform = styled.div`
 `;
 
 export const InformCategory = styled.p`
-  width: 104px;
+  /* width: 104px; */
   height: 18px;
   margin: 0 8px 0 0;
   font-family: 'Roboto', sans-serif;
@@ -86,7 +86,6 @@ export const InformShipping = styled.p`
 export const InformAdress = styled.p`
   width: 328px;
   height: 18px;
-  margin: 0px 0 16px;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   font-weight: normal;

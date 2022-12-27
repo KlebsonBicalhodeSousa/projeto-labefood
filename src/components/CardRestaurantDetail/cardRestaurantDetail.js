@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { goToRestaurant } from "../../routes/coordinator";
+import ItemCardRestaurantDetail from "../ItemCardRestaurantDetail/itemCardRestaurantDetail";
 import {
   ContainerCardRestaurant,
   ContainerTimePrice,
@@ -12,7 +13,7 @@ import {
   NameRestaurant,
 } from "./styled";
 
-const CardRestauranteDetail = ({ restaurantDetail }) => {
+const CardRestaurantDetail = ({ restaurantDetail }) => {
   const navigate = useNavigate();
   return (
     <ContainerCardRestaurant>
@@ -29,4 +30,4 @@ const CardRestauranteDetail = ({ restaurantDetail }) => {
     </ContainerCardRestaurant>
   );
 };
-export default CardRestauranteDetail;
+export default CardRestaurantDetail;
