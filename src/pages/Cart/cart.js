@@ -1,9 +1,10 @@
 import React from "react";
+import Header from "../../components/Header/header.js";
 
 const Cart = () => {
   return (
     <div>
-      Cart
+      <Header title ={"Carrinho"}/>
     </div>
   );
 }

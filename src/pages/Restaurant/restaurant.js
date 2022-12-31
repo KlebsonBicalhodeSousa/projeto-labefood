@@ -53,7 +53,7 @@ const Restaurant = () => {
   };
   return (
     <ContainerRestaurant>
-      <Header title="Restaurante" />
+      <Header title="Restaurante" back/>
       <CardRestaurant>
         <CardRestauranteDetail restaurantDetail={restaurantDetail} />
         {restaurantDetail.products &&

@@ -36,14 +36,16 @@ export const Time = styled.p`
 `
 
 export const BoxTitle = styled.div`
-  width: 175px;
+  width: 100%;
   height: 44px;
   margin: 0 92px 0 93px;
-  padding: 13px 63.5px 12px;
+  /* padding: 0 1rem; */
   display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 24px 1fr 24px;
   align-items: center;
   justify-items: center;
+  /* border: solid black 1px; */
 `;
 
 export const Title = styled.h1`
@@ -54,5 +56,6 @@ export const Title = styled.h1`
   font-style: normal;
   line-height: normal;
   text-align: center;
+  grid-column-start: 2;
   color: #000;
 `;
