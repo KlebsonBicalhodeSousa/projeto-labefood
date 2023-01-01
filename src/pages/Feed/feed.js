@@ -9,6 +9,7 @@ import {
   CardsRestaurants,
   ContainerFeed,
   InputSearch,
+  Line,
   Menu,
   MenuItem,
 } from "./styled";
@@ -117,6 +118,7 @@ const Feed = () => {
   return (
     <ContainerFeed>
       <Header title={"Rappi4"} />
+      <Line></Line>
       <InputSearch
         value={inputText}
         onChange={(event) => setInputText(event.target.value)}

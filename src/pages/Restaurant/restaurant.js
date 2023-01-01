@@ -9,6 +9,7 @@ import {
   CardRestaurant,
   Category,
   ContainerRestaurant,
+  Line,
   SectionProductByCategory,
 } from "./styled";
 
@@ -54,6 +55,7 @@ const Restaurant = () => {
   return (
     <ContainerRestaurant>
       <Header title="Restaurante" back/>
+      <Line></Line>
       <CardRestaurant>
         <CardRestauranteDetail restaurantDetail={restaurantDetail} />
         {restaurantDetail.products &&

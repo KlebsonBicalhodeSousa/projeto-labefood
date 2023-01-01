@@ -9,7 +9,7 @@ export const ContainerHeader = styled.div`
   align-items: center;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  border-bottom: solid 1px rgba(0, 0, 0, 0.25);
+  /* border-bottom: solid 1px rgba(0, 0, 0, 0.25); */
   background-color: #fff;
 `;
 

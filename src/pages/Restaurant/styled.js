@@ -10,8 +10,14 @@ export const ContainerRestaurant = styled.div`
   align-items: center;
   border: solid 1px ${secondaryColor};
 `;
+
+export const Line = styled.div`
+  border-bottom: solid 1px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  margin: 0 0 8px 0;
+`
+
 export const CardRestaurant = styled.div`
-  /* padding: 0 1rem; */
   width: 100%;
   display: flex;
   flex-direction: column;

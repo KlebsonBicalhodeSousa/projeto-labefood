@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { primaryColor, secondaryColor } from "../../constants/colors";
 
 export const ContainerFeed = styled.div`
-  width: 360px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,6 +18,12 @@ export const InputSearch = styled.input`
   border-radius: 2px;
   border: solid 1px ${secondaryColor};
 `;
+
+export const Line = styled.div`
+  border-bottom: solid 1px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  margin: 0 0 8px 0;
+`
 
 export const Menu = styled.nav`
   width: 100%;
