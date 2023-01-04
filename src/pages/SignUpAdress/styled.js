@@ -8,7 +8,15 @@ export const Main = styled.div`
     height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center;    
+`
+export const SubTitle = styled.div`      
+  font-size: 1rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.39px; 
 `
 
 export const Form = styled.form`
@@ -32,3 +40,10 @@ export const ButtonStyled = styled(Button)`
         
     }
 `
+export const LogoContainer = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+`;

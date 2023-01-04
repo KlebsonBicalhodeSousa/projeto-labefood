@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { useForm } from "../../hooks/useForm";
-import { ButtonStyled, DivPassword, Form, InputMaterial, Main, VisibilityButton } from "./styled";
+import { ButtonStyled, DivPassword, Form, InputMaterial, LogoContainer, Main, SubTitle, VisibilityButton } from "./styled";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import axios from "axios";
 import { BASE_URL } from "../../constants/url";
 import { useNavigate } from "react-router-dom";
 import { goToSignUpAdress } from "../../routes/coordinator";
+import Header from "../../components/Header/header.js";
+import logo from "../../assets/logo.svg"
 
 
 const SignUp = () => {
@@ -64,7 +66,11 @@ const SignUp = () => {
   }
   return (
     <Main>
-      <h2>Cadastrar</h2>
+      <Header back/>
+      <LogoContainer>
+        <img src={logo} />
+      </LogoContainer>
+      <SubTitle>Cadastrar</SubTitle>
       <Form onSubmit={onSubmitForm}>        
           <InputMaterial
           id="outlined-basic"

@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { ButtonStyled, DivPassword, Form, Main, InputMaterial, VisibilityButton, Redirect } from "./styled";
+import { ButtonStyled, DivPassword, Form, Main, InputMaterial, VisibilityButton, Redirect, LogoContainer } from "./styled";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import axios from "axios";
 import { BASE_URL } from "../../constants/url";
 import { useNavigate } from "react-router-dom";
 import { goToFeed, goToSignUp } from "../../routes/coordinator";
+import logo from "../../assets/logo.svg"
+import Header from "../../components/Header/header.js";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -59,6 +61,10 @@ const Login = () => {
   };
   return (
     <Main>
+      <Header/>
+      <LogoContainer>
+        <img src={logo} />
+      </LogoContainer>
       <p>Entrar</p>
       <Form onSubmit={onSubmitLogin}>
         <InputMaterial

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Button, IconButton } from "@mui/material";
+import { Button } from "@mui/material";
 import TextField from "@material-ui/core/TextField";
 
 export const InputMaterial = styled(TextField)`
@@ -44,12 +44,6 @@ export const ButtonStyled = styled(Button)`
     }
 `
 
-export const VisibilityButton = styled(IconButton)`
-    && {
-        position: absolute;
-        right: 3%;
-    }
-`
 
 export const DivPassword = styled.div`
     display: flex;

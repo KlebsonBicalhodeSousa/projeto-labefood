@@ -74,7 +74,7 @@ const Cart = () => {
   };
   return (
     <Main>
-      <Header title={"Meu Carrinho"} />
+      <Header title={"Meu Carrinho"} back/>
       <CartConfig>
         <InfoProfile>
           <p>Endereço de entrega</p>

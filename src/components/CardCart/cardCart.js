@@ -1,5 +1,5 @@
 import React from "react";
-import { Amount, CardComponent, ImageCard, InfoCard, Main } from "./styled";
+import { Amount, ButtonStyled, CardComponent, ImageCard, InfoCard, Main } from "./styled";
 
 const CardCart = ({ name, price, photoUrl, amount, description }) => {
   return (
@@ -22,6 +22,7 @@ const CardCart = ({ name, price, photoUrl, amount, description }) => {
               currency: "BRL",
             }).format(price)}
           </p>
+          <ButtonStyled>Remover</ButtonStyled>
         </div>
       </InfoCard>
     </Main>

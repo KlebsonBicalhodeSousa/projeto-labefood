@@ -1,10 +1,12 @@
 import axios from "axios";
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Header from "../../components/Header/header.js";
 import { BASE_URL } from "../../constants/url";
 import { useForm } from "../../hooks/useForm";
 import { goToFeed } from "../../routes/coordinator";
-import { ButtonStyled, Form, InputMaterial, Main } from "./styled";
+import { ButtonStyled, Form, InputMaterial, LogoContainer, Main, SubTitle } from "./styled";
+import logo from "../../assets/logo.svg";
 
 const SignUpAdress = () => {
 
@@ -40,7 +42,11 @@ const SignUpAdress = () => {
   }
     return (
       <Main>
-        <p>SignUpAdress</p>
+        <Header back/>
+        <LogoContainer>
+        <img src={logo} />
+      </LogoContainer>
+        <SubTitle>Meu endereço</SubTitle>
         <Form onSubmit={onSubmitFormAdress}>
         <InputMaterial
           id="outlined-basic"

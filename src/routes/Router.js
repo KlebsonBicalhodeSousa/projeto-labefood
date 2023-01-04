@@ -7,18 +7,20 @@ import Restaurant from "../pages/Restaurant/restaurant"
 import SignUpAdress from "../pages/SignUpAdress/signUpAdress"
 import SignUp from "../pages/SignUp/signUp"
 import AdressEdit from "../pages/AdressEdit/adressEdit"
+import ProfileEdit from "../pages/ProfileEdit/profileEdit"
 
 const Router = () => {
     return(
         <BrowserRouter>
             <Routes>
-                <Route index element={<Login/>}/>
+                <Route index element={<Feed/>}/>
+                <Route path="/login"element={<Login/>}/>
                 <Route path="/signUp"element={<SignUp/>}/>
                 <Route path="/signUp/adress"element={<SignUpAdress/>}/>
                 <Route path="/adressEdit/:id"element={<AdressEdit/>}/>
-                <Route path="/feed"element={<Feed/>}/>
                 <Route path="/feed/:restaurantId"element={<Restaurant/>}/>
                 <Route path="/profile" element={<Profile/>}/>
+                <Route path="/profileEdit/:id" element={<ProfileEdit/>}/>
                 <Route path="/cart" element={<Cart/>}/>
             </Routes>
         </BrowserRouter>
