@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { secondaryColor } from "../../constants/colors";
 
 export const ContainerRestaurant = styled.div`
-  width: 360px;
+  width: 100%;
   height: auto;
   padding: 0 16px 0 16px;
   display: flex;
@@ -18,7 +18,7 @@ export const Line = styled.div`
 `
 
 export const CardRestaurant = styled.div`
-  width: 100%;
+  width: 360px;
   display: flex;
   flex-direction: column;
   align-items: center;

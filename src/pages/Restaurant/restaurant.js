@@ -5,7 +5,6 @@ import CardRestauranteDetail from "../../components/CardRestaurantDetail/cardRes
 import Header from "../../components/Header/header.js";
 import ItemCardRestaurantDetail from "../../components/ItemCardRestaurantDetail/itemCardRestaurantDetail";
 import { BASE_URL } from "../../constants/url";
-import { GlobalStateContext } from "../../global/GlobalStateContext";
 import {
   CardRestaurant,
   Category,
@@ -15,9 +14,9 @@ import {
 } from "./styled";
 
 const Restaurant = () => {
-  const [restaurantDetail, setRestaurantdetail] = useState({});
+  const [restaurant, setRestaurant] = useState({});
   const [categories, setCategories] = useState([]);
-  const {addToCart} = useContext(GlobalStateContext)
+  
 
   const { restaurantId } = useParams();
   const token = localStorage.getItem("token");
@@ -27,16 +26,16 @@ const Restaurant = () => {
   }, []);
 
   useEffect(() => {
-    if (restaurantDetail.products) {
+    if (restaurant.products) {
       const newCategories = [];
-      for (const product of restaurantDetail.products) {
+      for (const product of restaurant.products) {
         if (!newCategories.includes(product.category)) {
           newCategories.push(product.category);
         }
       }
       setCategories(newCategories);
     }
-  }, [restaurantDetail]);
+  }, [restaurant]);
 
   const getRestaurant = () => {
     axios
@@ -46,10 +45,10 @@ const Restaurant = () => {
         },
       })
       .then((res) => {
-        setRestaurantdetail(res.data.restaurant);
+        setRestaurant(res.data.restaurant);
       })
       .catch((error) => {
-        console.log(error.response);
+        alert(error.response.message);
       });
   };
   return (
@@ -57,33 +56,30 @@ const Restaurant = () => {
       <Header title="Restaurante" back/>
       <Line></Line>
       <CardRestaurant>
-        <CardRestauranteDetail restaurantDetail={restaurantDetail} />
-        {restaurantDetail.products &&
+        <CardRestauranteDetail restaurantDetail={restaurant} />
+        {
+        restaurant.products 
+        &&
           categories.map((category) => {
             return (
-              <SectionProductByCategory>
+              <SectionProductByCategory key={category}>
                 <Category>{category}</Category>
-                {restaurantDetail.products
-                .filter((product)=>{
+                {
+                restaurant.products
+                .filter((product) => {
                   return product.category === category
                 }).map((product) => {
                   return (
                     <ItemCardRestaurantDetail
                       key={product.id}
                       product={product}
-                      // addToCart={addToCart}
+                      restaurant={restaurant}
                     />
                   );
                 })}
               </SectionProductByCategory>
             );
           })}
-        {/* {restaurantDetail.products &&
-          restaurantDetail.products.map((product) => {
-            return (
-              <ItemCardRestaurantDetail key={product.id} product={product} />
-            );
-          })} */}
       </CardRestaurant>
     </ContainerRestaurant>
   );

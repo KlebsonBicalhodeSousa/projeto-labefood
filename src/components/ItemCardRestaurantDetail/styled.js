@@ -30,17 +30,19 @@ export const InformProduct = styled.section`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 1.125rem 0 0 1rem;
+  justify-content: space-between;
+  padding: 0 0 0 1rem;
 `;
 
 export const BoxNameQuantity = styled.div`
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    width: 100%;
-`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+`;
 
 export const Name = styled.p`
+  margin-top: 1rem;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   font-weight: normal;
@@ -61,7 +63,6 @@ export const Description = styled.p`
   color: ${secondaryColor};
 `;
 
-
 export const Box = styled.div`
   width: 100%;
   margin-top: 9px;
@@ -75,7 +76,7 @@ export const Price = styled.p`
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: normal;  
+  line-height: normal;
   color: ${tertiaryColor};
 `;
 
@@ -91,4 +92,15 @@ export const ButtonAdd = styled.button`
 export const ButtonRemove = styled(ButtonAdd)`
   border: 1px solid red;
   color: red;
+`;
+
+export const QuantityProduct = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.063rem;
+  height: 2.063rem;
+  border: 1px solid red;
+  color: red;
+  border-radius: 0 8px 0 8px;
 `;

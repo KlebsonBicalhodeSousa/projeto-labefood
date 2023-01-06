@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { GlobalStateContext } from "../../global/GlobalStateContext";
 import ModalSelectQuantity from "../modal/ModalSelectQuantity";
 import {
@@ -13,19 +13,21 @@ import {
   ItemCard,
   Name,
   Price,
+  QuantityProduct,
 } from "./styled";
 
-const ItemCardRestaurantDetail = ({ product }) => {
-  // const [showModal, setShowModal] = useState(false)
-  const { showModal, setShowModal, addToCart, cart } =
-    useContext(GlobalStateContext);
+const ItemCardRestaurantDetail = ({ product, restaurant }) => {
+  const [showModal, setShowModal] = useState(false)
+  const {requests, states} = useContext(GlobalStateContext)
+  const {addToCart, removeToCart} = requests
+  const {cart} = states
+
   const choiceQuantity = (quantity) => {
-    addToCart(product, quantity);
+    addToCart(product, quantity, restaurant);
     setShowModal(false);
   };
 
   const productInCart = cart.find((productCart) => productCart.id === product.id);
-  console.log(productInCart);
 
   return (
     <ItemCard>
@@ -34,17 +36,16 @@ const ItemCardRestaurantDetail = ({ product }) => {
         <InformProduct>
           <BoxNameQuantity>
             <Name>{product.name}</Name>
+            {productInCart && <QuantityProduct>{productInCart.quantity}</QuantityProduct>}
           </BoxNameQuantity>
           <Description>{product.description}</Description>
           <Box>
             <Price>R${product.price}</Price>
-            {
-            productInCart? 
-              <ButtonRemove>Remover</ButtonRemove>
-             : 
-              <ButtonAdd onClick={() => setShowModal(true)}>
-                adicionar
-              </ButtonAdd>
+            
+            {productInCart ?
+            <ButtonRemove onClick={() => removeToCart(product.id)}>Remover</ButtonRemove> 
+            :  
+            <ButtonAdd onClick={() => setShowModal(true)}>adicionar</ButtonAdd>
             }
           </Box>
           <ModalSelectQuantity

@@ -97,5 +97,6 @@ export const Form = styled.form`
   input {
     height: 20px;
     width: 20px;
+    
   }
 `;
