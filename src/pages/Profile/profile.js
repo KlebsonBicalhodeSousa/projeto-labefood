@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header/header.js";
+import MenuNav from "../../components/Menu/menu.js";
 import { BASE_URL } from "../../constants/url.js";
 import { useProtectedPage } from "../../hooks/useProtectedPage.js";
 import { useRequestData } from "../../hooks/useRequestData.js";
@@ -36,6 +37,7 @@ console.log(person.user)
         </AddressPerson>
         </Information>
         <HistoryPurchase>Histórico de compras</HistoryPurchase>
+        <MenuNav page={"profile"}/>
       </Main>
     );
   }

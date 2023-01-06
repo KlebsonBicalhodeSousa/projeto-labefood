@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CardCart from "../../components/CardCart/cardCart.js";
 import Header from "../../components/Header/header.js";
+import MenuNav from "../../components/Menu/menu.js";
 import { BASE_URL } from "../../constants/url.js";
 import { useRequestData } from "../../hooks/useRequestData.js";
 import {
@@ -140,6 +141,7 @@ const Cart = () => {
           </Form>
         </Payment>
       </CartConfig>
+      <MenuNav page={"cart"}/>
     </Main>
   );
 };

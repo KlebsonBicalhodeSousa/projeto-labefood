@@ -1,10 +1,11 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import CardRestauranteDetail from "../../components/CardRestaurantDetail/cardRestaurantDetail";
 import Header from "../../components/Header/header.js";
 import ItemCardRestaurantDetail from "../../components/ItemCardRestaurantDetail/itemCardRestaurantDetail";
 import { BASE_URL } from "../../constants/url";
+import { GlobalStateContext } from "../../global/GlobalStateContext";
 import {
   CardRestaurant,
   Category,
@@ -16,7 +17,7 @@ import {
 const Restaurant = () => {
   const [restaurantDetail, setRestaurantdetail] = useState({});
   const [categories, setCategories] = useState([]);
-  console.log(restaurantDetail)
+  const {addToCart} = useContext(GlobalStateContext)
 
   const { restaurantId } = useParams();
   const token = localStorage.getItem("token");
@@ -36,7 +37,6 @@ const Restaurant = () => {
       setCategories(newCategories);
     }
   }, [restaurantDetail]);
-  console.log(categories);
 
   const getRestaurant = () => {
     axios
@@ -71,6 +71,7 @@ const Restaurant = () => {
                     <ItemCardRestaurantDetail
                       key={product.id}
                       product={product}
+                      // addToCart={addToCart}
                     />
                   );
                 })}

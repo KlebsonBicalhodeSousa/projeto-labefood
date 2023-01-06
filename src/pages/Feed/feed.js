@@ -3,6 +3,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import CardRestaurant from "../../components/CardRestaurant/cardRestaurant";
 import Header from "../../components/Header/header.js";
+import MenuNav from "../../components/Menu/menu";
 import { BASE_URL } from "../../constants/url";
 import { useProtectedPage } from "../../hooks/useProtectedPage";
 import {
@@ -140,6 +141,7 @@ const Feed = () => {
         })}
       </Menu>
       <CardsRestaurants>{filterRestaurant}</CardsRestaurants>
+      <MenuNav page={"feed"}/>
     </ContainerFeed>
   );
 };

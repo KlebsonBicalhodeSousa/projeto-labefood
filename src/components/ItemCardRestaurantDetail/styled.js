@@ -8,7 +8,6 @@ import {
 
 export const ItemCard = styled.main`
   width: 100%;
-  /* height: 120px; */
   margin: 8px 0 0;
 `;
 
@@ -87,4 +86,9 @@ export const ButtonAdd = styled.button`
   border: solid 1px ${tertiaryColor};
   background-color: white;
   margin: 9px -1px 0 17px;
+`;
+
+export const ButtonRemove = styled(ButtonAdd)`
+  border: 1px solid red;
+  color: red;
 `;
