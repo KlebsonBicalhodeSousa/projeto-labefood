@@ -34,8 +34,7 @@ const ProfileEdit = () => {
       .then((res) => {        
         setName(res.data.user.name)
         setEmail(res.data.user.email)
-        setCpf(res.data.user.cpf)        
-        console.log(res.data.user)
+        setCpf(res.data.user.cpf)   
       })
       .catch((error) => {
         console.log(error.response);
@@ -58,7 +57,7 @@ const ProfileEdit = () => {
         goToProfile(navigate);     
       })
       .catch((error) => {
-        console.log(error.response.message)
+        alert(error.response.message)
       });
   };
 

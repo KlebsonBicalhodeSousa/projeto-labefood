@@ -72,11 +72,11 @@ export const AddressPerson = styled.div`
 `;
 export const HistoryPurchase = styled.div`
   height: 70%;
+  display: flex;
+  flex-direction: column;
   /* height: 55%; */
   /* padding: 10px;
   margin-top: 30px;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   gap: 10px;
   border-radius: 5px;
@@ -98,6 +98,10 @@ export const HistoryPurchase = styled.div`
     border-bottom: solid 1px #908e8e;
   } */
 `;
+export const OrderHistory = styled.div`
+  display: flex;
+  flex-direction: column;
+`
 
 export const GoTOBack = styled(ArrowBackIosNewIcon)`
   && {

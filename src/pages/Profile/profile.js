@@ -1,12 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import CardOrderHistory from "../../components/CardOrderHistory/cardOrderHistory.js";
 import Header from "../../components/Header/header.js";
 import MenuNav from "../../components/Menu/menu.js";
 import { BASE_URL } from "../../constants/url.js";
 import { useProtectedPage } from "../../hooks/useProtectedPage.js";
 import { useRequestData } from "../../hooks/useRequestData.js";
-import { goToProfileEdit } from "../../routes/coordinator.js";
-import { AddressPerson, HistoryPurchase, Information, Main, ProfileContainer, ProfilePerson } from "./styled.js";
+import { goToAdressEdit, goToProfileEdit } from "../../routes/coordinator.js";
+import { AddressPerson, HistoryPurchase, Information, Main, OrderHistory, ProfileContainer, ProfilePerson } from "./styled.js";
 
 const Profile = () => {
   useProtectedPage()
@@ -14,7 +15,7 @@ const Profile = () => {
   const navigate = useNavigate()
 
 const person = useRequestData({}, `${BASE_URL}/profile`)
-console.log(person.user)
+const order = useRequestData({}, `${BASE_URL}/orders/history`);
 
   return (
     <Main>
@@ -33,10 +34,25 @@ console.log(person.user)
             <h4>Endereço Cadastrado</h4>
             <p>{person.user && person.user.address}</p>
           </div>
-          <div>Editar</div>
+          <div onClick={() => goToAdressEdit(navigate, person.user.id)}>Editar</div>
         </AddressPerson>
         </Information>
-        <HistoryPurchase>Histórico de compras</HistoryPurchase>
+        <HistoryPurchase>
+          <h3>Histórico de compras</h3>
+          <OrderHistory>
+            {order.orders && order.orders.map((order) => {
+              console.log(order)
+              return (
+                <CardOrderHistory key={order}
+                restaurantName={order.restaurantName}
+                totalPrice={order.totalPrice}
+                createdAt={order.createdAt}
+                />
+              )
+            })}
+          
+          </OrderHistory>
+        </HistoryPurchase>
         <MenuNav page={"profile"}/>
       </Main>
     );

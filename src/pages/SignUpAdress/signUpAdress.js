@@ -13,7 +13,7 @@ const SignUpAdress = () => {
   const {form, onChangeForm, clear} = useForm({
     street: "",
     number: "",
-    neighbourhood: "Vila N. Conceição",
+    neighbourhood: "",
     city: "",
     state: "",
     complement: ""
@@ -23,6 +23,7 @@ const SignUpAdress = () => {
 
   const onSubmitFormAdress = (event) => {
     event.preventDefault()
+    clear()
     insertAdrees()
   }
 

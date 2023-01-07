@@ -76,7 +76,6 @@ const Feed = () => {
         setters.setOrder(res.data.order);
         const timeCurrent = new Date().getTime()
         const expiresAt = res.data.order.expiresAt
-        console.log(expiresAt - timeCurrent)
 
         setTimeout(()=>{
           getActiveOrder()          
