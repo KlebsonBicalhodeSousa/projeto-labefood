@@ -26,5 +26,4 @@ export const CartStyled = styled(Cart)`
 `
 export const ContainerSpace = styled.div`
     height: 3.063rem;
-    margin-top: 1rem;
 `

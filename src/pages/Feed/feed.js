@@ -1,9 +1,11 @@
 import { SettingsPowerSharp } from "@mui/icons-material";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { GlobalStateContext } from "../../global/GlobalStateContext";
 import CardRestaurant from "../../components/CardRestaurant/cardRestaurant";
 import Header from "../../components/Header/header.js";
 import MenuNav from "../../components/Menu/menu";
+import OrderPopup from "../../components/OrderPopup/OrderPopup";
 import { BASE_URL } from "../../constants/url";
 import { useProtectedPage } from "../../hooks/useProtectedPage";
 import {
@@ -22,9 +24,11 @@ const Feed = () => {
   const [categoryRestaurant, setCategoryRestaurant] = useState([]);
   const [inputText, setInputText] = useState("");
   const [selectCategory, setSelectCategory] = useState("");
+  const {setters, states} = useContext(GlobalStateContext)
 
   useEffect(() => {
     getRestaurants();
+    getActiveOrder()
   }, []);
 
   const token = localStorage.getItem("token");
@@ -61,24 +65,27 @@ const Feed = () => {
     setCategoryRestaurant(changeObjectCategory);
   };
 
-  // const getActiveOrder = async () => {
-  //   await axios
-  //     .get(`${BASE_URL}/active-order`, {
-  //       headers: {
-  //         auth: token,
-  //       },
-  //     })
-  //     .then((res) => {
-  //       Setters.setOrder(res.data.order);
-  //       const timeCurrent = new Date().getTime()
-  //       setTimeout(()=>{
-  //         getActiveOrder()
-  //       })
-  //     })
-  //     .catch((error) => {
-  //       alert(error.response);
-  //     });
-  // };
+  const getActiveOrder = async () => {
+    await axios
+      .get(`${BASE_URL}/active-order`, {
+        headers: {
+          auth: token,
+        },
+      })
+      .then((res) => {
+        setters.setOrder(res.data.order);
+        const timeCurrent = new Date().getTime()
+        const expiresAt = res.data.order.expiresAt
+        console.log(expiresAt - timeCurrent)
+
+        setTimeout(()=>{
+          getActiveOrder()          
+        }, expiresAt - timeCurrent)
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   const filterRestaurant = restaurants
     .filter((restaurant) =>
@@ -141,6 +148,9 @@ const Feed = () => {
         })}
       </Menu>
       <CardsRestaurants>{filterRestaurant}</CardsRestaurants>
+      {states.order && <OrderPopup 
+        restaurantName={states.order.restaurantName} 
+        totalPrice={states.order.totalPrice}/>}
       <MenuNav page={"feed"}/>
     </ContainerFeed>
   );
