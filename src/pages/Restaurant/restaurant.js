@@ -1,10 +1,11 @@
 import axios from "axios";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import CardRestauranteDetail from "../../components/CardRestaurantDetail/cardRestaurantDetail";
 import Header from "../../components/Header/header.js";
 import ItemCardRestaurantDetail from "../../components/ItemCardRestaurantDetail/itemCardRestaurantDetail";
 import { BASE_URL } from "../../constants/url";
+import { useProtectedPage } from "../../hooks/useProtectedPage";
 import {
   CardRestaurant,
   Category,
@@ -14,6 +15,7 @@ import {
 } from "./styled";
 
 const Restaurant = () => {
+  useProtectedPage()
   const [restaurant, setRestaurant] = useState({});
   const [categories, setCategories] = useState([]);
   

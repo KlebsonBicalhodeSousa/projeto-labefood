@@ -46,6 +46,10 @@ export const ButtonStyled = styled(Button)`
 
 export const Redirect = styled.p`
 position: relative;
+height: 1.5rem;
+display: flex;
+align-items: center;
+justify-content: center;
   button {
     border: none;
     font-family: 'Roboto', sans-serif;
@@ -57,11 +61,11 @@ position: relative;
     line-height: normal;
     letter-spacing: -0.39px;
     text-align: center;
-    text-decoration: underline;
     color: blue;
     margin-left: 5px;
     :hover {
         font-weight: 700;
+        margin-left: 3.7px;
     }
   }
 `;

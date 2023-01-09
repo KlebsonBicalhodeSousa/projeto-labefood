@@ -4,14 +4,12 @@ import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header/header.js";
 import { BASE_URL } from "../../constants/url";
 import { useForm } from "../../hooks/useForm";
-import { useRequestData } from "../../hooks/useRequestData.js";
+import { useProtectedPage } from "../../hooks/useProtectedPage.js";
 import { goToFeed, goToProfile } from "../../routes/coordinator";
 import { ButtonStyled, Form, InputMaterial, Main, SubTitle } from "./styled";
 
 const AdressEdit = () => {
-
-  // const getAdress = useRequestData({}, `${BASE_URL}/profile/address`)
-  // console.log(getAdress.address)
+useProtectedPage()
 
   const {form, onChangeForm, setForm} = useForm({
     street: "",

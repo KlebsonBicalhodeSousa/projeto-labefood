@@ -82,7 +82,7 @@ const Feed = () => {
         }, expiresAt - timeCurrent)
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error.response);
       });
   };
 

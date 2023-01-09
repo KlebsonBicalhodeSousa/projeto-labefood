@@ -7,8 +7,10 @@ import { useForm } from "../../hooks/useForm";
 import { goToFeed } from "../../routes/coordinator";
 import { ButtonStyled, Form, InputMaterial, LogoContainer, Main, SubTitle } from "./styled";
 import logo from "../../assets/logo.svg";
+import { useProtectedPage } from "../../hooks/useProtectedPage.js";
 
 const SignUpAdress = () => {
+  useProtectedPage()
 
   const {form, onChangeForm, clear} = useForm({
     street: "",

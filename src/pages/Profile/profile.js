@@ -6,56 +6,80 @@ import MenuNav from "../../components/Menu/menu.js";
 import { BASE_URL } from "../../constants/url.js";
 import { useProtectedPage } from "../../hooks/useProtectedPage.js";
 import { useRequestData } from "../../hooks/useRequestData.js";
-import { goToAdressEdit, goToProfileEdit } from "../../routes/coordinator.js";
-import { AddressPerson, HistoryPurchase, Information, Main, OrderHistory, ProfileContainer, ProfilePerson } from "./styled.js";
+import { goToAdressEdit, goToLogin, goToProfileEdit } from "../../routes/coordinator.js";
+import {
+  AddressPerson,
+  HistoryPurchase,
+  Information,
+  Line,
+  Logout,
+  Main,
+  OrderHistory,
+  ProfilePerson,
+} from "./styled.js";
 
 const Profile = () => {
-  useProtectedPage()
+  useProtectedPage();
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  
+  const logout = (navigate) => {
+    localStorage.clear("token")
+    goToLogin(navigate)
+  }
 
-const person = useRequestData({}, `${BASE_URL}/profile`)
-const order = useRequestData({}, `${BASE_URL}/orders/history`);
+  const person = useRequestData({}, `${BASE_URL}/profile`);
+  const order = useRequestData({}, `${BASE_URL}/orders/history`);
 
   return (
     <Main>
-        <Header title="Meu Perfil"/>
-        <Information>
-          <ProfilePerson>
-            <div>
-              <p>{person.user && person.user.name}</p>
-              <p>{person.user && person.user.email}</p>
-              <p>{person.user && person.user.cpf}</p>
-            </div>
-            <div onClick={() => goToProfileEdit(navigate, person.user.id)}>Editar</div>
-          </ProfilePerson>
+      <Header title="Meu Perfil" />
+      <Information>
+        <ProfilePerson>
+          <div>
+            <p>{person.user && person.user.name}</p>
+            <p>{person.user && person.user.email}</p>
+            <p>{person.user && person.user.cpf}</p>
+          </div>
+          <div onClick={() => goToProfileEdit(navigate, person.user.id)}>
+            Editar
+          </div>
+        </ProfilePerson>
         <AddressPerson>
           <div>
             <h4>Endereço Cadastrado</h4>
             <p>{person.user && person.user.address}</p>
           </div>
-          <div onClick={() => goToAdressEdit(navigate, person.user.id)}>Editar</div>
+          <div onClick={() => goToAdressEdit(navigate, person.user.id)}>
+            Editar
+          </div>
         </AddressPerson>
-        </Information>
-        <HistoryPurchase>
-          <h3>Histórico de compras</h3>
-          <OrderHistory>
-            {order.orders && order.orders.map((order) => {
-              console.log(order)
+      </Information>
+      <HistoryPurchase>
+        <h3>Histórico de compras</h3>
+        <Line></Line>
+        <OrderHistory>
+          {order.orders && order.orders.length > 0 ? (
+            order.orders &&
+            order.orders.map((order) => {
               return (
-                <CardOrderHistory key={order}
-                restaurantName={order.restaurantName}
-                totalPrice={order.totalPrice}
-                createdAt={order.createdAt}
+                <CardOrderHistory
+                  key={order.createdAt}
+                  restaurantName={order.restaurantName}
+                  totalPrice={order.totalPrice}
+                  createdAt={order.createdAt}
                 />
-              )
-            })}
-          
-          </OrderHistory>
-        </HistoryPurchase>
-        <MenuNav page={"profile"}/>
-      </Main>
-    );
-  }
-  
-  export default Profile;
+              );
+            })
+          ) : (
+            <p>Você não fez ou não recebeu nenhum pedido ainda</p>
+          )}
+        </OrderHistory>
+      </HistoryPurchase>
+      <Logout onClick={() => logout(navigate)}>Sair</Logout>
+      <MenuNav page={"profile"} />
+    </Main>
+  );
+};
+
+export default Profile;

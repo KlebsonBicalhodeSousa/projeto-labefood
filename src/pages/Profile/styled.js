@@ -1,16 +1,10 @@
 import styled from "styled-components";
-import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import { primaryColor, quaternaryColor, quinternaryColor, tertiaryColor } from "../../constants/colors";
 
 export const Main = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100vh;
-`;
-
-export const ProfileContainer = styled.div`
-  /* height: 5%;
-  text-align: center; */
-  /* border-bottom: 1px solid black; */
+  height: 94.5vh;
 `;
 
 export const Information = styled.div`
@@ -46,9 +40,9 @@ export const ProfilePerson = styled.div`
   }
 `;
 export const AddressPerson = styled.div`
-  height: 45%;
+  height: 4.75rem;
   margin-top: 10px;
-  background-color: lightgray;
+  background-color: ${quinternaryColor};
   display: flex;
   justify-content: space-between;
 
@@ -71,57 +65,47 @@ export const AddressPerson = styled.div`
   }
 `;
 export const HistoryPurchase = styled.div`
-  height: 70%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  /* height: 55%; */
-  /* padding: 10px;
-  margin-top: 30px;
-  align-items: center;
-  gap: 10px;
-  border-radius: 5px;
-  overflow: auto;
-  background-color: lightgray;
-  #history {
-    text-align: center;
-    padding-bottom: 10px;
-    border-bottom: solid 1px #908e8e;
+  h3 {
+    width: 328px;
+  height: 18px;
+  margin: 1rem 1rem 0.5rem;
+  font-family: Roboto;
+  font-size: 1rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.39px;
+  color: #000;
   }
-  #container-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    padding-bottom: 10px;
-    text-align: center;
-    overflow: auto;
-    border-bottom: solid 1px #908e8e;
-  } */
 `;
+
+export const Line = styled.div`
+  margin: 0 1rem 0.438rem 1rem;
+  border: solid 1px ${tertiaryColor};
+`
 export const OrderHistory = styled.div`
   display: flex;
+  height: 51.6vh;
   flex-direction: column;
+  overflow: auto;
+  p {
+    margin-left: 1rem;
+  }
 `
 
-export const GoTOBack = styled(ArrowBackIosNewIcon)`
-  && {
-    cursor: pointer;
-    font-size: 2rem;
-    margin: 20px 20px 0 20px;
+  export const Logout = styled.button`
+    font-size: 1rem;
+    font-family: 'Roboto';
+    align-self: flex-start;
+    border: none;
+    background: transparent;
+    color: ${quaternaryColor};
+    padding: 0.625rem 0.625rem 1rem 1rem;
     :hover {
-      box-shadow: 0 5px 0;
+      color: ${primaryColor};
     }
-    :active {
-      position: relative;
-      top: 5px;
-      box-shadow: none;
-    }
-    @media (min-width: 300px) and (max-width: 500px) {
-      margin: 5px 5px 0 0;
-      :active {
-        position: relative;
-        top: 5px;
-      }
-    }
-  }
-`;
+  `

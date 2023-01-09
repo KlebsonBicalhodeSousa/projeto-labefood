@@ -61,7 +61,7 @@ const SignUp = () => {
       goToSignUpAdress(navigate)
     })
     .catch((error) => {
-      alert(error.response)
+      alert("Ops! Algo deu, confira se os dados digitados estão corretos.")
     })
   }
   return (

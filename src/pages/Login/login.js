@@ -106,7 +106,7 @@ const Login = () => {
         </DivPassword>
 
         <ButtonStyled type="submit">Entrar</ButtonStyled>
-      <Redirect>Não tem cadastro click <button onClick={()=>goToSignUp(navigate)}>Aqui</button></Redirect>
+      <Redirect>Não possui cadastro? <button onClick={()=>goToSignUp(navigate)}>Clique aqui</button></Redirect>
       </Form>
     </Main>
   );

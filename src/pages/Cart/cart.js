@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import CardCart from "../../components/CardCart/cardCart.js";
 import Header from "../../components/Header/header.js";
 import ItemCardRestaurantDetail from "../../components/ItemCardRestaurantDetail/itemCardRestaurantDetail.js";
@@ -9,6 +10,7 @@ import { BASE_URL } from "../../constants/url.js";
 import { GlobalStateContext } from "../../global/GlobalStateContext.js";
 import { useProtectedPage } from "../../hooks/useProtectedPage.js";
 import { useRequestData } from "../../hooks/useRequestData.js";
+import { goToFeed } from "../../routes/coordinator.js";
 import {
   CartConfig,
   CartInfo,
@@ -36,7 +38,9 @@ const Cart = () => {
 
   const {states, setters} = useContext(GlobalStateContext)
   const {cart, restaurant} = states
-  const {setOrder} = setters
+  const {setOrder, setCart} = setters
+
+  const navigate = useNavigate()
  
     const totalPrice = () => {
       let totPrice = 0
@@ -75,11 +79,12 @@ const Cart = () => {
       }
     })
     .then((res) => {
-      console.log(res.data)
       setOrder(res.data.order)
+      setCart([])
+      goToFeed(navigate)
     })
     .catch((error) => {
-      console.log(error.response)
+      alert(error.response.data.message)
     })
   }
 

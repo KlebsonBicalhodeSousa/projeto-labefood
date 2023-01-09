@@ -11,7 +11,7 @@ const MenuNav = ({page}) => {
             <CartStyled onClick={() => goToCart(navigate)} pagecurrent={page === "cart"}/>
             <AvatarStyled onClick={() => goToProfile(navigate)} pagecurrent={page === "profile"}/>
         </MenuContainer>
-        <ContainerSpace/>
+        {/* <ContainerSpace/> */}
         </>        
     )
 }

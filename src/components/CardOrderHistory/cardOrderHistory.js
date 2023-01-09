@@ -11,16 +11,15 @@ const CardOrderHistory = ({ restaurantName, totalPrice, createdAt }) => {
 
         return `${day}/${month}/${year}`
     }
-    console.log(convertDate(createdAt)  )
     return(
         <HistoryContainer>
             <BoxInform>
                 <RestaurantName>{restaurantName}</RestaurantName>
                 <DeliveryDate>{convertDate(createdAt)}</DeliveryDate>
-                <TotalPrice>Subtotal: {new Intl.NumberFormat("pt-BR", {
-              style: "currency",
-              currency: "BRL",
-            }).format(totalPrice)}</TotalPrice>
+                <TotalPrice>Subtotal: {totalPrice.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    })}</TotalPrice>
             </BoxInform>
             
         </HistoryContainer>
