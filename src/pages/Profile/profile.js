@@ -7,6 +7,7 @@ import { BASE_URL } from "../../constants/url.js";
 import { useProtectedPage } from "../../hooks/useProtectedPage.js";
 import { useRequestData } from "../../hooks/useRequestData.js";
 import { goToAdressEdit, goToLogin, goToProfileEdit } from "../../routes/coordinator.js";
+import Edit from '../../assets/edit.svg'
 import {
   AddressPerson,
   HistoryPurchase,
@@ -42,7 +43,7 @@ const Profile = () => {
             <p>{person.user && person.user.cpf}</p>
           </div>
           <div onClick={() => goToProfileEdit(navigate, person.user.id)}>
-            Editar
+          <img src={Edit} />
           </div>
         </ProfilePerson>
         <AddressPerson>
@@ -51,7 +52,7 @@ const Profile = () => {
             <p>{person.user && person.user.address}</p>
           </div>
           <div onClick={() => goToAdressEdit(navigate, person.user.id)}>
-            Editar
+          <img src={Edit} />
           </div>
         </AddressPerson>
       </Information>

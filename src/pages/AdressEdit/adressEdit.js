@@ -33,8 +33,7 @@ useProtectedPage()
           auth: token,
         },
       })
-      .then((res) => {  
-        console.log(res.data.address)      
+      .then((res) => {    
         setForm({
           street: res.data.address.street,
           number: res.data.address.number,

@@ -8,7 +8,6 @@ const Header = ({ title, back }) => {
   return (
     <ContainerHeader>
       <BoxInfo>
-        <Time>9:41 AM</Time>
       </BoxInfo>
       <BoxTitle>
         {back && <ArrowBackIosNew onClick={() => goToBack(navigate)}/>}

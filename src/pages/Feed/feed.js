@@ -1,4 +1,3 @@
-import { SettingsPowerSharp } from "@mui/icons-material";
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { GlobalStateContext } from "../../global/GlobalStateContext";
@@ -15,6 +14,7 @@ import {
   Line,
   Menu,
   MenuItem,
+  ContainerSpace
 } from "./styled";
 
 const Feed = () => {
@@ -150,6 +150,7 @@ const Feed = () => {
       {states.order && <OrderPopup 
         restaurantName={states.order.restaurantName} 
         totalPrice={states.order.totalPrice}/>}
+        <ContainerSpace></ContainerSpace>
       <MenuNav page={"feed"}/>
     </ContainerFeed>
   );

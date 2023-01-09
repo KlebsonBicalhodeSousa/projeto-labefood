@@ -8,7 +8,7 @@ export const Main = styled.div`
     height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;    
+    align-items: center;
 `
 export const SubTitle = styled.div`      
   font-size: 1rem;

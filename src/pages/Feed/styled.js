@@ -3,6 +3,7 @@ import { primaryColor, secondaryColor } from "../../constants/colors";
 
 export const ContainerFeed = styled.div`
   width: 100%;
+  /* margin-bottom: 3.663rem; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,3 +49,6 @@ export const MenuItem = styled.button`
   background: transparent;
   padding: 0 1rem;
 `;
+export const ContainerSpace = styled.div`
+    height: 3.663rem;
+`

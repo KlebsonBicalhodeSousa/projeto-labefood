@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ButtonStyled, Form, InputMaterial, Main } from "./style";
+import { ButtonStyled, Form, InputMaterial, Main, SubTitle } from "./style";
 import { useProtectedPage } from "../../hooks/useProtectedPage";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -80,7 +80,7 @@ const ProfileEdit = () => {
   return (    
       <Main>
         <Header back/>
-        <h2>Editar perfil</h2>
+        <SubTitle>Editar perfil</SubTitle>
         <Form onSubmit={onSubmitForm}>
           <InputMaterial
             id="outlined-basic"
