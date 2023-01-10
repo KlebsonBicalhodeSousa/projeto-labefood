@@ -5,6 +5,7 @@ import IconButton from "@material-ui/core/IconButton";
 
 export const Main = styled.div`
   padding: 10px;
+  width: 400px;
   min-width: 320px;
   height: 100vh;
   display: flex;

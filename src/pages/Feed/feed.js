@@ -45,7 +45,7 @@ const Feed = () => {
         filterCategory(res.data.restaurants);
       })
       .catch((error) => {
-        alert(error.response);
+        alert(error.response.data.message);
       });
   };
 
@@ -82,7 +82,7 @@ const Feed = () => {
         }, expiresAt - timeCurrent)
       })
       .catch((error) => {
-        console.log(error.response);
+        alert(error.response.data.message);
       });
   };
 
@@ -105,7 +105,6 @@ const Feed = () => {
 
   const onClickCategory = (parameter)=>{
     setSelectCategory(parameter)
-
     const selectedCategoryColor = categoryRestaurant.map((categ)=>{
       if (categ.category === parameter){
         return {

@@ -9,6 +9,7 @@ export const MenuContainer = styled.div`
     align-items: center;
     justify-items: center;
     width: 100%;
+    min-width: 320px;
     height: 3.063rem;
     box-shadow: 0 -1px 3px 0 rgba(0, 0, 0, 0.2), 0 -2px 1px -1px rgba(0, 0, 0, 0.12), 0 -1px 3px 0 rgba(0, 0, 0, 0.2);
     position: fixed;

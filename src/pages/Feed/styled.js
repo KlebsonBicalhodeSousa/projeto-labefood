@@ -3,7 +3,7 @@ import { primaryColor, secondaryColor } from "../../constants/colors";
 
 export const ContainerFeed = styled.div`
   width: 100%;
-  /* margin-bottom: 3.663rem; */
+  min-width: 320px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,11 +27,11 @@ export const Line = styled.div`
 `
 
 export const Menu = styled.nav`
-  width: 100%;
-  height: 42px;
-  margin: 8px 0 0;
+  max-width: 360px;
+  height: 45px;
+  margin: 0.5rem 1rem 0 1rem;
   display: flex;
-  padding: 12px 0 12px 16px;
+  align-items: center;
   overflow-x: auto;
 `;
 

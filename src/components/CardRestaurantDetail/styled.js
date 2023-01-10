@@ -6,6 +6,7 @@ export const ContainerCardRestaurant = styled.div`
   padding: 0 0 16px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin: 9px 16px 8px;
 `;
 

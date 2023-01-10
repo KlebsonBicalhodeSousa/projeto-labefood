@@ -57,7 +57,7 @@ const Profile = () => {
         </AddressPerson>
       </Information>
       <HistoryPurchase>
-        <h3>Histórico de compras</h3>
+        <h3>Histórico de pedidos</h3>
         <Line></Line>
         <OrderHistory>
           {order.orders && order.orders.length > 0 ? (
@@ -76,8 +76,8 @@ const Profile = () => {
             <p>Você não fez ou não recebeu nenhum pedido ainda</p>
           )}
         </OrderHistory>
-      </HistoryPurchase>
       <Logout onClick={() => logout(navigate)}>Sair</Logout>
+      </HistoryPurchase>
       <MenuNav page={"profile"} />
     </Main>
   );

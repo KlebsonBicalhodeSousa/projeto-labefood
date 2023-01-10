@@ -137,7 +137,7 @@ const Cart = () => {
             }).format(cart.length? fullPrice : 0)}</p>
             
           </Total>
-          <h1>Forma de Pagamento</h1>
+          <h3>Forma de Pagamento</h3>
           <hr />
           <Form onSubmit={onSubmitPlaceOrder}>
             {payMentMethod.map((key) => {

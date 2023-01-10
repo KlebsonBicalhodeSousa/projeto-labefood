@@ -8,7 +8,7 @@ import {
 
 export const ItemCard = styled.main`
   width: 100%;
-  margin: 8px 0 0;
+  /* margin: 8px 0 0; */
 `;
 
 export const InformCard = styled.section`

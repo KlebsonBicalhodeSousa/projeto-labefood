@@ -4,7 +4,7 @@ import { Amount, ButtonStyled, CardComponent, ImageCard, InfoCard, Main } from "
 const CardCart = ({ name, price, photoUrl, amount, description }) => {
   return (
     <Main>
-      <CardComponent>
+      {/* <CardComponent>
         <ImageCard src={photoUrl} />
       </CardComponent>
       <InfoCard>
@@ -24,7 +24,7 @@ const CardCart = ({ name, price, photoUrl, amount, description }) => {
           </p>
           <ButtonStyled>Remover</ButtonStyled>
         </div>
-      </InfoCard>
+      </InfoCard> */}
     </Main>
   );
 };

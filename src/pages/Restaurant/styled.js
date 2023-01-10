@@ -7,6 +7,7 @@ export const ContainerRestaurant = styled.div`
   padding: 0 16px 0 16px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   border: solid 1px ${secondaryColor};
 `;
@@ -41,4 +42,5 @@ export const Category = styled.p`
   font-style: normal;
   line-height: normal;
   border-bottom: 1px solid black;
+  margin-bottom: 0.5rem;
 `;

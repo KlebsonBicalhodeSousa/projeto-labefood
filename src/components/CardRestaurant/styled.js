@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { primaryColor, secondaryColor } from "../../constants/colors";
 
 export const Main = styled.div`
-  width: 360px;
+  width: auto;
   height: auto;
   margin: 20px 0 0;
   padding: 8px 16px;

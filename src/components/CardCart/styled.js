@@ -4,6 +4,7 @@ import { Button } from "@mui/material";
 
 export const Main = styled.div`
   display: flex;
+  width: 100%;
   height: 7rem;
   margin: 0 1rem 1rem;
   border-radius: 8px;

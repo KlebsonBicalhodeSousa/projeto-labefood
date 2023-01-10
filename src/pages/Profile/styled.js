@@ -4,12 +4,17 @@ import { primaryColor, quaternaryColor, quinternaryColor, tertiaryColor } from "
 export const Main = styled.div`
   display: flex;
   flex-direction: column;
-  height: 94.5vh;
+  align-items: center;
+  width: 100%;
+  height: 94vh;
+  margin-bottom: 3.063rem;
+
 `;
 
 export const Information = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
   height: 30%;
   margin-top: 1rem;
   border-top: 1px solid black;
@@ -65,13 +70,13 @@ export const AddressPerson = styled.div`
   }
 `;
 export const HistoryPurchase = styled.div`
-  height: 100%;
+  height: uto;
+  min-height: 50%;
   display: flex;
   flex-direction: column;
   h3 {
     width: 328px;
-  height: 18px;
-  margin: 1rem 1rem 0.5rem;
+  margin: 1rem 1rem 0;
   font-family: Roboto;
   font-size: 1rem;
   font-weight: normal;
@@ -79,17 +84,16 @@ export const HistoryPurchase = styled.div`
   font-style: normal;
   line-height: normal;
   letter-spacing: -0.39px;
-  color: #000;
   }
 `;
 
 export const Line = styled.div`
-  margin: 0 1rem 0.438rem 1rem;
+  margin: 0.5rem 1rem 0.438rem 1rem;
   border: solid 1px ${tertiaryColor};
 `
 export const OrderHistory = styled.div`
   display: flex;
-  height: 51.6vh;
+  height: 40.5vh;
   flex-direction: column;
   overflow: auto;
   p {

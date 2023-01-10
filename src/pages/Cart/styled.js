@@ -5,13 +5,15 @@ import { Button } from "@mui/material";
 export const Main = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100%;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
   font-family: "Roboto";
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
-  h1{
+  h3{
     margin-left: 1rem;
   }
 `;
@@ -22,6 +24,7 @@ export const CartConfig = styled.div`
   justify-content: space-between;
   width: 100%;
   height: 100%;
+  margin-bottom: 3.063rem;
 `;
 export const InfoProfile = styled.div`
   height: 4.75rem;
@@ -38,7 +41,7 @@ export const InfoProfile = styled.div`
   }
 `;
 export const InfoRestaurant = styled.div`
-  padding: 1rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -50,17 +53,19 @@ export const InfoRestaurant = styled.div`
 export const CartInfo = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  justify-content: space-between;
+  width: 360px;
+  height: 265px;
+  overflow: auto;
 `;
 export const EmptyCart = styled.p`
-  font-size: 3rem;
+  font-size: 1.5rem;
   text-align: center;
 `;
 export const Payment = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
   p,
   label {
     font-size: 1.2rem;
@@ -69,7 +74,7 @@ export const Payment = styled.div`
 export const Freight = styled.p`
   display: flex;
   justify-content: flex-end;
-  margin: 5px;
+  margin: 0.6125rem 1rem 0 0.6125rem;
 `;
 export const Total = styled.div`
   display: flex;
@@ -78,6 +83,7 @@ export const Total = styled.div`
   p:nth-child(2) {
     color: ${quaternaryColor};
     font-size: 1.5rem;
+    margin: 0 1rem 0 0;
   }
 `;
 export const ButtonStyled = styled(Button)`
@@ -88,11 +94,14 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   div {
-    margin: 5px;
+    margin: 0.5rem 0 0.5rem 1rem;
+    display: flex;
+    align-items: center;
   }
   label {
     font-size: 1rem;
     text-transform: uppercase;
+    margin-left: 5px;
   }
   input {
     height: 20px;

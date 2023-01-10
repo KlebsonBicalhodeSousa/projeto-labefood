@@ -101,7 +101,7 @@ const Login = () => {
             onClick={handleClickShowPassword}
             edge="end"
           >
-            {showPassword ? <VisibilityOff /> : <Visibility />}
+            {showPassword ? <Visibility /> : <VisibilityOff />}
           </VisibilityButton>
         </DivPassword>
 
